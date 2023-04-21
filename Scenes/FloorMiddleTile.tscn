@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://75lvt4tw3tvh"]
+
+[ext_resource type="Script" path="res://Scenes/FloorMiddleTile.gd" id="1_4ntjq"]
+[ext_resource type="Texture2D" uid="uid://dh0qqk643cn" path="res://Sprites/tileBrown_02.png" id="2_wsgfp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eicmg"]
+size = Vector2(64, 64)
+
+[node name="FloorTile" type="StaticBody2D"]
+script = ExtResource("1_4ntjq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eicmg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wsgfp")

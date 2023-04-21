@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://bq8kbo3pdv8je"]
+
+[ext_resource type="Texture2D" uid="uid://dwu0fpoo5fd7r" path="res://Sprites/frog_spritesheet.png" id="1_usp6h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_moigq"]
+atlas = ExtResource("1_usp6h")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqnmm"]
+atlas = ExtResource("1_usp6h")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obhci"]
+atlas = ExtResource("1_usp6h")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbxlt"]
+atlas = ExtResource("1_usp6h")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dwr77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_moigq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqnmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obhci")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_tbxlt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqnmm")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3u63"]
+size = Vector2(59, 48)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dwr77")
+animation = &"jump"
+frame_progress = 0.662712
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 5)
+shape = SubResource("RectangleShape2D_a3u63")
